@@ -1,8 +1,17 @@
-module "azure_mysql_database"{
-source = ""
+data "terraform_remote_state" "fromVNET" {
+  backend = "azurerm"
+  config = {
+    storage_account_name = "terraformbackendteam2"
+    container_name       = "terraformtfstate"
+    key                  = "team2/vnet/terraformtfstate"
+  }
+}
 
-rg_name                   = "rg_mysql_db_test2"
-rg_region                 = "West Europe"
+module "azure_mysql_database"{
+source = "3latanova/mysql-database/project"
+
+rg_name                   = data.terraform_remote_state.output.resource_group_name
+rg_region                 = data.terraform_remote_state.output.resource_group_location
 server_name               = "test-server-453235dsdf34534"
 db_name                   = "db-example"
 db_admin                  = "mysqladminun"

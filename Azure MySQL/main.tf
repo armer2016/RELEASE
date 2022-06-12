@@ -8,9 +8,9 @@ data "terraform_remote_state" "fromVNET" {
   }
 }
 
-data "azurerm_resource_group" "rg_name1" {
-  name = "azure_vnet"
-}
+# data "azurerm_resource_group" "rg_name1" {
+#   name = "azure_vnet"
+# }
 
 module "azure_mysql_database" { 
 source = "3latanova/mysql-database/project"

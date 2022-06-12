@@ -10,5 +10,4 @@ address_prefix3 = "10.0.3.0/24"     #please provide Subnet3 address_prefix
 subnet_names1   = "subnet1"
 subnet_names2   = "subnet2"
 subnet_names3   = "subnet3"
-
 }

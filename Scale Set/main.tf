@@ -24,7 +24,7 @@ module "scale_set_lb" {
   source            = "Meydan52/scale_set_lb/azure"
   rg_name           = data.terraform_remote_state.fromVNET.outputs.rg_name
   rg_region         = data.terraform_remote_state.fromVNET.outputs.rg_location
-  subnet_id         = data.terraform_remote_state.fromVNET.outputs.subnet_ids[0] 
+  subnet_id         = "/subscriptions/77333203-07cc-4166-ac0b-b786a47b8423/resourceGroups/azure_vnet/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/subnet1"
   ss_name           = "mytestss-123467"
   vm_sku            = "Standard_D2s_v3"
   instance_number   = 1

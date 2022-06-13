@@ -11,4 +11,5 @@ output "subnet_name" {
 }
 output "subnet_ids" {
   value = module.Azure_Vnet.subnet_id
+  
 }

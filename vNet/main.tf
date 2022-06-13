@@ -1,7 +1,7 @@
 module "Azure_Vnet" {
 source          = "Meydan52/vnet/azure"
 rg_name         = "azure_vnet"      #please provide rg_name
-rg_location     = "East US"         #please provide location
+rg_location     = "central US"         #please provide location
 vnet_name       = "MyVnet"          #VNET Name
 address_space   = ["10.0.0.0/16"]   #please provide VNET address_space
 address_prefix1 = "10.0.1.0/24"     #please provide Subnet1 address_prefix

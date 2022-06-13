@@ -33,5 +33,5 @@ module "scale_set_lb" {
   image_source      = "/subscriptions/77333203-07cc-4166-ac0b-b786a47b8423/resourceGroups/StorageRG/providers/Microsoft.Compute/galleries/UbuntuApache1/images/targetUbuntu/versions/0.0.1"
   computer_name     = "mywpvm"
   Standard_LRS_name = "Standard_LRS"
-  db_resource_id    = ""
+  db_resource_id    = data.terraform_remote_state.fromMSQL.outputs.server_id
 }

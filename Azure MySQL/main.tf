@@ -14,7 +14,7 @@ data "terraform_remote_state" "fromVNET" {
 
 module "azure_mysql_database" { 
 source = "3latanova/mysql-database/project"
-rg_name                   = data.azurerm_resource_group.rg_name1.name
+rg_name                   = data.terraform_remote_state.fromVNET.outputs.rg_name
 server_name               = "test-server-453235dsdf34534"
 db_name                   = "db-example"
 db_admin                  = "mysqladminun"
